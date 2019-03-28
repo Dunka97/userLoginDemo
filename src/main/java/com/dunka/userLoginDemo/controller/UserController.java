@@ -26,4 +26,17 @@ public class UserController {
 		userRepository.save(user);
 		return new ModelAndView("redirect:/index.do");
 	}
+	
+	@RequestMapping("/user/login.do")
+	public ModelAndView login(User user) {
+		System.out.println(user.getUsername() + "  "+user.getPassword());
+		User userLogin = userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+		if(userLogin == null) {
+			return new ModelAndView("redirect:/index.do");
+		}else {
+			return new ModelAndView("/welcome.html");
+		}
+		
+	}
+	
 }
