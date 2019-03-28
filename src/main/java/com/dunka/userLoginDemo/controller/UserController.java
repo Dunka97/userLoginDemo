@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dunka.userLoginDemo.bean.User;
+
 @RestController
 public class UserController {
 
@@ -13,7 +15,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/user/register.do")
-	public ModelAndView register() {
+	public ModelAndView register(User user) {
 		System.out.println("register已经成功");
 		return new ModelAndView("redirect:/index.do");
 	}
