@@ -11,4 +11,10 @@ public class UserController {
 	public ModelAndView login() {
 		return new ModelAndView("index.html");
 	}
+	
+	@RequestMapping("/user/register.do")
+	public ModelAndView register() {
+		System.out.println("register已经成功");
+		return new ModelAndView("redirect:/index.do");
+	}
 }

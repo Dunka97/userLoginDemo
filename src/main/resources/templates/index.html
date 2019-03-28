@@ -132,8 +132,8 @@
 				</div>
 			</div>
 			<!-- 会员注册 -->
+			<form action="" th:action="@{~/user/register.do}" method="POST">
 			<div id='regist_container' style="display: none;">
-				<form th:action="@{~/user/register}" th:method="POST">
 				<div id="lab1">
 					<span id="lab_login">会员注册</span>
 					<span id="lab_toLogin">
@@ -152,9 +152,10 @@
 					<input id="getVCode" type="button" class="btn btn-success" value="点击发送验证码" onclick="sendCode(this)" />
 
 				</div>
-				<input type="button" value="注册" class="btn btn-success" id="regist_btn" />
-				</form>
+				<input type="submit" value="注册" class="btn btn-success" id="regist_btn" />
+			
 			</div>
+				</form>
 		</div>
 
 	</body>
